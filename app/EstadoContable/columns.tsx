@@ -27,6 +27,15 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "amount",
     header: "Importe",
+    cell: ({ row }) => {
+      const amount = parseFloat(row.getValue("amount"));
+      const formattedAmount = new Intl.NumberFormat("es-AR", {
+        style: "currency",
+        currency: "ARS",
+      }).format(amount);
+
+      return formattedAmount;
+    },
   },
   {
     accessorKey: "discount",
