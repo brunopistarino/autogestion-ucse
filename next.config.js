@@ -1,4 +1,26 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true };
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: {
+        loader: "@svgr/webpack",
+        options: {
+          svgoConfig: {
+            plugins: [
+              {
+                name: "removeViewBox",
+                active: false,
+              },
+            ],
+          },
+        },
+      },
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;
