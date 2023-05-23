@@ -199,7 +199,7 @@ export default function Sidebar() {
       </div>
       <div className="flex pr-4 pb-8 pl-4 gap-3 items-center">
         <div className="bg-slate-700 w-10 h-10 rounded-full flex place-content-center items-center">
-          <UserIcon clasName="w-full" />
+          <UserIcon />
         </div>
         <div className="flex flex-col">
           <p>Bruno Pistarino</p>
