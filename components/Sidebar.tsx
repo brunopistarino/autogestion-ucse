@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import LogoIcon from "@icons/logom.svg";
+
 import HomeIcon from "@icons/home-line.svg";
 import PencilIcon from "@icons/pencil-01.svg";
 import SearchIcon from "@icons/search-refraction.svg";
@@ -147,7 +149,8 @@ export default function Sidebar() {
     <nav className="bg-slate-900 w-80 shrink-0 text-white flex-col justify-between hidden md:flex">
       <div className="flex flex-col gap-6 pt-8">
         <div className="flex items-center gap-4 pr-5 pl-6">
-          <img src="logo.png" className="max-h-12" alt="" />
+          {/* <img src="logo.png" className="max-h-12" alt="" /> */}
+          <LogoIcon className="h-12 w-9" />
           <p className="text-2xl font-bold">Autogestión</p>
         </div>
         <div className="px-6">

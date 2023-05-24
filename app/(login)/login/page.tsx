@@ -1,13 +1,15 @@
 import MailIcon from "@icons/mail-01.svg";
+import LogoIcon from "@icons/logob.svg";
 
 export default async function Page() {
   return (
     <div className="grid grid-cols-2">
       <div className="w-full flex flex-col justify-between p-8">
         <div className="flex gap-4">
-          <img src="logo.png" className="max-h-12" alt="" />
+          {/* <img src="logo.png" className="max-h-12" alt="" /> */}
+          <LogoIcon className="w-9 h-14" />
           <div>
-            <p className="text-xl font-semibold mt-[-2px]">
+            <p className="text-xl font-semibold">
               Universidad Católica de Santiago del Estero
             </p>
             <p>Sistema autogestión alumnos</p>
@@ -22,7 +24,7 @@ export default async function Page() {
               <label htmlFor="">Documento</label>
               <input
                 type="text"
-                className="border px-[14px] py-[10px] rounded-md"
+                className="border border-slate-300 px-[14px] py-[10px] rounded-md"
                 placeholder="Ingrese su documento"
               />
             </div>
@@ -30,7 +32,7 @@ export default async function Page() {
               <label htmlFor="">Contraseña</label>
               <input
                 type="text"
-                className="border px-[14px] py-[10px] rounded-md"
+                className="border border-slate-300 px-[14px] py-[10px] rounded-md"
                 placeholder="Ingrese su contraseña"
               />
             </div>
