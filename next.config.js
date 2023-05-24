@@ -3,20 +3,23 @@ const nextConfig = {
   webpack(config) {
     config.experiments = { ...config.experiments, topLevelAwait: true };
     config.module.rules.push({
-      test: /\.svg$/,
-      use: {
-        loader: "@svgr/webpack",
-        options: {
-          svgoConfig: {
-            plugins: [
-              {
-                name: "removeViewBox",
-                active: false,
+      loader: "@svgr/webpack",
+      options: {
+        prettier: false,
+        svgo: true,
+        svgoConfig: {
+          plugins: [
+            {
+              name: "preset-default",
+              params: {
+                overrides: { removeViewBox: false },
               },
-            ],
-          },
+            },
+          ],
         },
+        titleProp: true,
       },
+      test: /\.svg$/,
     });
 
     return config;

@@ -66,7 +66,7 @@ export default function Sidebar() {
       subItems: [
         {
           name: "Ficha académica",
-          link: "/",
+          link: "/FichaAcademica",
         },
         {
           name: "Estado contable",
@@ -144,7 +144,7 @@ export default function Sidebar() {
     },
   ];
   return (
-    <nav className="bg-slate-900 w-80 text-white flex flex-col justify-between">
+    <nav className="bg-slate-900 w-80 shrink-0 text-white flex-col justify-between hidden md:flex">
       <div className="flex flex-col gap-6 pt-8">
         <div className="flex items-center gap-4 pr-5 pl-6">
           <img src="logo.png" className="max-h-12" alt="" />

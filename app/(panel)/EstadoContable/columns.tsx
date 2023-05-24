@@ -4,16 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Payment = {
-  id: string;
-  description: string;
-  ticket: string;
-  amount: number;
-  discount: number;
-  date: string;
-  place: string;
-  status: "pagado" | "pendiente" | "vencido";
-};
+import { Payment } from "@/lib/types";
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -52,5 +43,22 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "status",
     header: "Estado",
+    cell: ({ row }) => {
+      const status = String(row.getValue("status"));
+
+      return (
+        <span
+          className={`inline-block px-2 py-1 rounded-full text-xs font-semibold capitalize ${
+            status === "pagado"
+              ? "bg-green-200 text-green-800 border border-green-500"
+              : status === "pendiente"
+              ? "bg-gray-200 text-gray-800 border border-gray-500"
+              : "bg-red-200 text-red-800 border border-red-500"
+          }`}
+        >
+          {status}
+        </span>
+      );
+    },
   },
 ];
