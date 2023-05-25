@@ -9,6 +9,18 @@ export default function Page() {
           <Link href="">
             <p>Ficha Académica</p>
           </Link>
+          <Link href="">
+            <p>Estado Contable</p>
+          </Link>
+          <Link href="">
+            <p>Datos Personales</p>
+          </Link>
+          <Link href="">
+            <p>Historial Transacciones</p>
+          </Link>
+          <Link href="">
+            <p>Cert. Alum. Reg</p>
+          </Link>
         </div>
       </div>
     </>

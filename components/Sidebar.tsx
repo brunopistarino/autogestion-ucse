@@ -146,7 +146,7 @@ export default function Sidebar() {
     },
   ];
   return (
-    <nav className="bg-slate-900 w-80 shrink-0 text-white flex-col justify-between hidden md:flex">
+    <nav className="bg-slate-900 w-80 shrink-0 text-white flex-col justify-between hidden md:flex overflow-y-auto">
       <div className="flex flex-col gap-6 pt-8">
         <div className="flex items-center gap-4 pr-5 pl-6">
           {/* <img src="logo.png" className="max-h-12" alt="" /> */}
@@ -160,7 +160,7 @@ export default function Sidebar() {
             placeholder="Buscar"
           />
         </div>
-        <div className="flex flex-col gap-1 px-4">
+        <div className="flex flex-col gap-1 px-4 ">
           {navItems.map((item, x) => (
             <div key={x} className="flex flex-col gap-2">
               {item.subItems ? (

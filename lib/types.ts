@@ -8,3 +8,20 @@ export type Payment = {
   place: string;
   status: "pagado" | "pendiente" | "vencido";
 };
+
+export type Materia = {
+  id: string;
+  nombre: string;
+  condicion:
+    | "promocionado"
+    | "aprobado"
+    | "regular"
+    | "inscripto regular"
+    | "baja"
+    | "no regular";
+  // condicion: string;
+  nota: number;
+  fechaInscripcion: string;
+  fechaCondicion: string;
+  fechaVencimiento: string;
+};
