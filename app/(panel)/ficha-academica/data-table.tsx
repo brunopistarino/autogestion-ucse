@@ -21,6 +21,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+import { Label } from "@/components/ui/label";
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -57,10 +59,10 @@ export function DataTable<TData, TValue>({
   return (
     <div className="rounded-md border bg-white">
       <div className="flex p-5 rounded-md items-end">
-        <div className="flex flex-col gap-[6px]">
-          <label htmlFor="">Filtrar por nombre</label>
+        <div className="flex flex-col gap-2">
+          <Label htmlFor="name">Filtrar por nombre</Label>
           <Input
-            placeholder="Busqueda"
+            placeholder="Materia"
             value={
               (table.getColumn("nombre")?.getFilterValue() as string) ?? ""
             }
@@ -68,6 +70,7 @@ export function DataTable<TData, TValue>({
               table.getColumn("nombre")?.setFilterValue(event.target.value)
             }
             className="max-w-sm"
+            id="name"
           />
         </div>
         <DropdownMenu>

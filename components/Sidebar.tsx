@@ -16,6 +16,19 @@ import UserIcon from "@icons/user-01.svg";
 import ChevronDown from "@icons/chevron-down.svg";
 import ChevronUp from "@icons/chevron-up.svg";
 
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogFooter,
+  DialogDescription,
+} from "@/components/ui/dialog";
+
 export default function Sidebar() {
   const [open, setOpen] = useState<String>("");
 
@@ -200,15 +213,41 @@ export default function Sidebar() {
           ))}
         </div>
       </div>
-      <div className="flex pr-4 pb-8 pl-4 gap-3 items-center">
-        <div className="bg-slate-700 w-10 h-10 rounded-full flex place-content-center items-center">
-          <UserIcon />
-        </div>
-        <div className="flex flex-col">
-          <p>Bruno Pistarino</p>
-          <p className="text-sm">brunopistarino@gmail.com</p>
-        </div>
+      <div className="px-2 pb-6">
+        <UserDialog>
+          <div className="flex gap-3 items-center hover:bg-slate-800 rounded-md p-2 cursor-pointer">
+            <div className="bg-slate-700 w-10 h-10 rounded-full flex place-content-center items-center">
+              <UserIcon />
+            </div>
+            <div className="flex flex-col">
+              <p>Bruno Pistarino</p>
+              <p className="text-sm">brunopistarino@gmail.com</p>
+            </div>
+          </div>
+        </UserDialog>
       </div>
     </nav>
   );
 }
+
+const UserDialog = ({ children }: { children: React.ReactNode }) => (
+  <Dialog>
+    <DialogTrigger asChild>{children}</DialogTrigger>
+    <DialogContent className="sm:max-w-[425px]">
+      <DialogHeader>
+        <DialogTitle>Bruno Pistarino</DialogTitle>
+        <DialogDescription>brunopistarino@gmail.com</DialogDescription>
+      </DialogHeader>
+      <div className="grid gap-4 py-4">
+        <p>Carrera: ING. EN INFORMÁTICA - Plan 2022</p>
+        <p>Departamento Académico Rafaela</p>
+      </div>
+      <DialogFooter>
+        <Button className="w-full">Cambiar de Carrera</Button>
+        <Button className="w-full" variant="destructive">
+          Cerrar Sesión
+        </Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+);
