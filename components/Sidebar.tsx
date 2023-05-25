@@ -68,11 +68,11 @@ export default function Sidebar() {
       subItems: [
         {
           name: "Ficha académica",
-          link: "/FichaAcademica",
+          link: "/ficha-academica",
         },
         {
           name: "Estado contable",
-          link: "/EstadoContable",
+          link: "/estado-contable",
         },
         {
           name: "Datos personales",
