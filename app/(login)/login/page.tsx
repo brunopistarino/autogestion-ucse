@@ -1,5 +1,9 @@
+import Link from "next/link";
+
 import MailIcon from "@icons/mail-01.svg";
 import LogoIcon from "@icons/logob.svg";
+
+import { Button } from "@/components/ui/button";
 
 export default async function Page() {
   return (
@@ -36,9 +40,9 @@ export default async function Page() {
                 placeholder="Ingrese su contraseña"
               />
             </div>
-            <button className="bg-blue-700 px-[14px] py-[10px] rounded-md text-white">
-              Ingresar
-            </button>
+            <Link href="" className="w-full">
+              <Button className="w-full bg-blue-700">Ingresar</Button>
+            </Link>
           </div>
           <div>
             <p>

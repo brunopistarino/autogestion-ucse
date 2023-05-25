@@ -244,9 +244,11 @@ const UserDialog = ({ children }: { children: React.ReactNode }) => (
       </div>
       <DialogFooter>
         <Button className="w-full">Cambiar de Carrera</Button>
-        <Button className="w-full" variant="destructive">
-          Cerrar Sesión
-        </Button>
+        <Link href="login" className="w-full">
+          <Button className="w-full" variant="destructive">
+            Cerrar Sesión
+          </Button>
+        </Link>
       </DialogFooter>
     </DialogContent>
   </Dialog>
