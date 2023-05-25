@@ -20,7 +20,7 @@ export default async function Page() {
           <p className="text-3xl font-semibold">Estado Contable</p>
         </div>
         <div className="flex gap-4 border-b">
-          <button className="text-purple-700 font-bold border-b-2 border-purple-700 px-1 pb-2.5">
+          <button className="text-blue-700 font-bold border-b-2 border-blue-700 px-1 pb-2.5">
             Aranceles
           </button>
           <button className="px-1 pb-3">Planes de Pago</button>

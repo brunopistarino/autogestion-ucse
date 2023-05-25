@@ -19,9 +19,8 @@ export type Materia = {
     | "inscripto regular"
     | "baja"
     | "no regular";
-  // condicion: string;
-  nota: number;
-  fechaInscripcion: string;
-  fechaCondicion: string;
-  fechaVencimiento: string;
+  nota?: number;
+  fechaInscripcion?: string;
+  fechaCondicion?: string;
+  fechaVencimiento?: string;
 };
