@@ -89,7 +89,7 @@ export default function Sidebar() {
         },
         {
           name: "Datos personales",
-          link: "/",
+          link: "/datos-personales",
         },
         {
           name: "Inscriptos por examen",
@@ -97,7 +97,7 @@ export default function Sidebar() {
         },
         {
           name: "Calendario académico",
-          link: "/",
+          link: "/calendario-academico",
         },
       ],
     },

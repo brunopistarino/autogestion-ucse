@@ -11,7 +11,7 @@ export default async function Page() {
         <div className="flex gap-4">
           <div className="max-w-xs w-full">
             <p className="font-semibold">Personal</p>
-            <p className="text-gray-400 font-light">
+            <p className="text-gray-500 font-light">
               Actualiza tu informacion personal.
             </p>
           </div>
@@ -54,7 +54,7 @@ export default async function Page() {
         <div className="flex gap-4">
           <div className="max-w-xs w-full">
             <p className="font-semibold">Dirección</p>
-            <p className="text-gray-400 font-light">
+            <p className="text-gray-500 font-light">
               Actualiza tu informacion de residencia.
             </p>
           </div>
@@ -95,7 +95,7 @@ export default async function Page() {
         <div className="flex gap-4">
           <div className="max-w-xs w-full">
             <p className="font-semibold">Contacto</p>
-            <p className="text-gray-400 font-light">
+            <p className="text-gray-500 font-light">
               Actualiza tu informacion de contacto.
             </p>
           </div>
