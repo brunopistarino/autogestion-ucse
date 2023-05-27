@@ -4,6 +4,10 @@ import { DataTable } from "./data-table";
 
 import { getMaterias } from "@/lib/utils";
 
+import Header from "@components/Header";
+import HeaderTitle from "@components/HeaderTitle";
+import HeaderDescription from "@components/HeaderTitle";
+
 export default async function Page() {
   const materias = await getMaterias();
 
@@ -19,9 +23,9 @@ export default async function Page() {
 
   return (
     <>
-      <header className="px-4 md:px-8 flex flex-col gap-4">
-        <p className="text-3xl font-semibold">Ficha Académica</p>
-        <div className="flex gap-2 md:gap-6 flex-col sm:flex-row">
+      <Header>
+        <HeaderTitle>Ficha Académica</HeaderTitle>
+        <div className="flex px-4 md:px-0 gap-2 md:gap-6 flex-col sm:flex-row">
           <div className="flex flex-col w-full p-6 rounded-md border gap-2 bg-white">
             <p>Promedio</p>
             <p className="text-4xl font-semibold">{promedioFinal}</p>
@@ -39,7 +43,7 @@ export default async function Page() {
             <p className="text-4xl font-semibold">{48 - cantidadMaterias}</p>
           </div>
         </div>
-      </header>
+      </Header>
       <div className="container px-0 md:px-8 mx-auto">
         <DataTable columns={columns} data={materias} />
       </div>

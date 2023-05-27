@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 
 import Header from "@components/Header";
 import HeaderTitle from "@components/HeaderTitle";
+import HeaderDescription from "@components/HeaderDescription";
 import Container from "@components/Container";
 
 export default async function Page() {
@@ -9,10 +10,10 @@ export default async function Page() {
     <>
       <Header>
         <HeaderTitle>Certificado de Alumno Regular</HeaderTitle>
-        <p>
+        <HeaderDescription>
           Podés generar hasta <strong>2 (dos)</strong> certificados vigentes por
           carrera
-        </p>
+        </HeaderDescription>
       </Header>
       <Container className="text-center bg-blue-200 text-blue-900">
         <p> No tienes generado ningún certificado.</p>

@@ -5,13 +5,6 @@ import Link from "next/link";
 
 import LogoIcon from "@icons/logom.svg";
 
-import HomeIcon from "@icons/home-line.svg";
-import PencilIcon from "@icons/pencil-01.svg";
-import SearchIcon from "@icons/search-refraction.svg";
-import BookIcon from "@icons/book-closed.svg";
-import RefreshIcon from "@icons/refresh-ccw-01.svg";
-import ClipboardIcon from "@icons/clipboard.svg";
-import EditIcon from "@icons/edit-05.svg";
 import UserIcon from "@icons/user-01.svg";
 import ChevronDown from "@icons/chevron-down.svg";
 import ChevronUp from "@icons/chevron-up.svg";
@@ -35,6 +28,8 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState<Boolean>(false);
   const [open, setOpen] = useState<String>("");
 
+  const navItems = getPages();
+
   const handleIsOpen = () => {
     setIsOpen(!isOpen);
   };
@@ -51,23 +46,6 @@ export default function Sidebar() {
     }
   };
 
-  // if (typeof window !== "undefined") {
-  //   window.addEventListener("scroll", () => {
-  //     const navbar = document.getElementById("navbar");
-  //     if (navbar && current != "") {
-  //       navbar.classList.remove("transparent");
-  //       return;
-  //     }
-  //     if (navbar) {
-  //       if (window.scrollY > window.innerHeight / 2) {
-  //         navbar.classList.remove("transparent");
-  //       } else {
-  //         navbar.classList.add("transparent");
-  //       }
-  //     }
-  //   });
-  // }
-
   if (typeof window !== "undefined") {
     window.addEventListener("resize", () => {
       if (!isOpen && window.innerWidth > 768) {
@@ -76,125 +54,6 @@ export default function Sidebar() {
     });
   }
 
-  const navItems = getPages();
-
-  // const navItems = [
-  //   {
-  //     name: "Inicio",
-  //     icon: <HomeIcon />,
-  //     link: "/",
-  //   },
-  //   {
-  //     name: "Inscripciones",
-  //     icon: <PencilIcon />,
-  //     link: "/",
-  //     subItems: [
-  //       {
-  //         name: "Inscripción a cursar",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Inscripción a examen regular",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Pre-Inscripción a examen libre",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Generar boleta examen libre",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Inscripción a examen libre",
-  //         link: "/",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     name: "Consultas",
-  //     icon: <SearchIcon />,
-  //     link: "/",
-  //     subItems: [
-  //       {
-  //         name: "Ficha académica",
-  //         link: "/ficha-academica",
-  //       },
-  //       {
-  //         name: "Estado contable",
-  //         link: "/estado-contable",
-  //       },
-  //       {
-  //         name: "Datos personales",
-  //         link: "/datos-personales",
-  //       },
-  //       {
-  //         name: "Inscriptos por examen",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Calendario académico",
-  //         link: "/calendario-academico",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     name: "Transacciones",
-  //     icon: <RefreshIcon />,
-  //     subItems: [
-  //       {
-  //         name: "Historial",
-  //         link: "/historial-transacciones",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     name: "Actualizar datos",
-  //     icon: <EditIcon />,
-  //     subItems: [
-  //       {
-  //         name: "Cambiar correo",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Cambia clave",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Cambiar celular",
-  //         link: "/",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     name: "Certificaciones",
-  //     icon: <BookIcon />,
-  //     subItems: [
-  //       {
-  //         name: "Certificado de alumno regular",
-  //         link: "/certificado-alumno-regular",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     name: "Solicitudes",
-  //     icon: <ClipboardIcon />,
-  //     subItems: [
-  //       {
-  //         name: "Título",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Solicitudes admisión",
-  //         link: "/",
-  //       },
-  //       {
-  //         name: "Solicitudes becas",
-  //         link: "/",
-  //       },
-  //     ],
-  //   },
-  // ];
   return (
     <>
       <nav className="flex md:hidden bg-slate-900 text-white sticky items-center justify-between h-[71px] top-0 right-0 left-0 px-6">

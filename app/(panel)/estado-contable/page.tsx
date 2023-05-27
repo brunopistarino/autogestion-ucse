@@ -4,8 +4,10 @@ import { Payment } from "@/lib/types";
 import { columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 
+import Header from "@components/Header";
+import HeaderTitle from "@components/HeaderTitle";
+
 async function getData(): Promise<Payment[]> {
-  // Fetch data from your API here.
   const payments = await getPayments();
   return payments;
 }
@@ -15,11 +17,9 @@ export default async function Page() {
 
   return (
     <>
-      <header className="px-0 md:px-8 flex flex-col gap-6">
-        <div>
-          <p className="px-4 md:px-0 text-3xl font-semibold">Estado Contable</p>
-        </div>
-        <div className="px-4 md:px-0 flex gap-4 border-b overflow-x-auto">
+      <Header>
+        <HeaderTitle>Estado Contable</HeaderTitle>
+        <div className="px-4 md:px-0 flex gap-4 border-b overflow-x-auto mt-2">
           <button className="text-blue-700 font-bold border-b-2 border-blue-700 px-1 pb-2.5 whitespace-nowrap">
             Aranceles
           </button>
@@ -32,7 +32,7 @@ export default async function Page() {
           </button>
           <button className="px-1 pb-3 whitespace-nowrap">Recibos</button>
         </div>
-      </header>
+      </Header>
       <div className="container px-0 md:px-8 mx-auto">
         <DataTable columns={columns} data={data} />
       </div>
