@@ -11,44 +11,10 @@ import { buttonVariants } from "@/components/ui/button";
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
 const styles = `
-.MyCalendar {
-  width: 100%;
-}
-
-.MyCalendar div {
-  width: 100%;
-}
 .MyCalendar #react-day-picker-1 {
   width: 100%;
   text-align: right;
   transform: translateX(40px);
-}
-
-.MyCalendar div th {
-  width: 100%;
-}
-
-.MyCalendar div tr {
-  width: 100%;
-  // gap: 8px;
-}
-
-.MyCalendar div td {
-  width: 100%;
-}
-
-.MyCalendar div td button {
-  width: 100%;
-}
-
-.MyCalendar .DayPicker-Month {
-  width: 100%;
-}
-
-.MyCalendar .DayPicker-Weekday,
-.MyCalendar .DayPicker-Day {
-  display: inline-block;
-  width: calc(100% / 7);
 }
 `;
 
@@ -177,11 +143,11 @@ function BigCalendar({
         className={cn("p-3 bg-white MyCalendar", className)}
         classNames={{
           months:
-            "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-          month: "space-y-4",
-          caption: "flex justify-center pt-1 relative items-center",
-          caption_label: "text-sm font-medium",
-          nav: "space-x-1 flex items-center",
+            "flex flex-col w-full sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+          month: "space-y-4 w-full",
+          caption: "flex justify-center w-full pt-1 relative items-center",
+          caption_label: "text-sm w-full font-medium",
+          nav: "space-x-1 w-full flex items-center",
           nav_button: cn(
             buttonVariants({ variant: "outline" }),
             "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
@@ -189,14 +155,14 @@ function BigCalendar({
           nav_button_previous: "absolute left-1",
           nav_button_next: "absolute right-1",
           table: "w-full border-collapse space-y-1",
-          head_row: "flex",
+          head_row: "flex w-full",
           head_cell:
-            "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
+            "text-muted-foreground w-full rounded-md w-9 font-normal text-[0.8rem]",
           row: "flex w-full mt-2",
-          cell: "text-center text-sm p-0 relative [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+          cell: "text-center w-full text-sm p-0 relative [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
           day: cn(
             buttonVariants({ variant: "ghost" }),
-            "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+            "h-9 w-full p-0 font-normal aria-selected:opacity-100"
           ),
           day_today: "bg-accent text-accent-foreground border-2 border-black",
           day_outside: "text-muted-foreground opacity-50",
