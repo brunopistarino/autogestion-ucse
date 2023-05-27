@@ -18,6 +18,8 @@ import ChevronUp from "@icons/chevron-up.svg";
 import MenuIcon from "@icons/menu-01.svg";
 import CloseIcon from "@icons/x-close.svg";
 
+import { getPages } from "@/lib/pages";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -74,123 +76,125 @@ export default function Sidebar() {
     });
   }
 
-  const navItems = [
-    {
-      name: "Inicio",
-      icon: <HomeIcon />,
-      link: "/",
-    },
-    {
-      name: "Inscripciones",
-      icon: <PencilIcon />,
-      link: "/",
-      subItems: [
-        {
-          name: "Inscripción a cursar",
-          link: "/",
-        },
-        {
-          name: "Inscripción a examen regular",
-          link: "/",
-        },
-        {
-          name: "Pre-Inscripción a examen libre",
-          link: "/",
-        },
-        {
-          name: "Generar boleta examen libre",
-          link: "/",
-        },
-        {
-          name: "Inscripción a examen libre",
-          link: "/",
-        },
-      ],
-    },
-    {
-      name: "Consultas",
-      icon: <SearchIcon />,
-      link: "/",
-      subItems: [
-        {
-          name: "Ficha académica",
-          link: "/ficha-academica",
-        },
-        {
-          name: "Estado contable",
-          link: "/estado-contable",
-        },
-        {
-          name: "Datos personales",
-          link: "/datos-personales",
-        },
-        {
-          name: "Inscriptos por examen",
-          link: "/",
-        },
-        {
-          name: "Calendario académico",
-          link: "/calendario-academico",
-        },
-      ],
-    },
-    {
-      name: "Transacciones",
-      icon: <RefreshIcon />,
-      subItems: [
-        {
-          name: "Historial",
-          link: "/historial-transacciones",
-        },
-      ],
-    },
-    {
-      name: "Actualizar datos",
-      icon: <EditIcon />,
-      subItems: [
-        {
-          name: "Cambiar correo",
-          link: "/",
-        },
-        {
-          name: "Cambia clave",
-          link: "/",
-        },
-        {
-          name: "Cambiar celular",
-          link: "/",
-        },
-      ],
-    },
-    {
-      name: "Certificaciones",
-      icon: <BookIcon />,
-      subItems: [
-        {
-          name: "Certificado de alumno regular",
-          link: "/certificado-alumno-regular",
-        },
-      ],
-    },
-    {
-      name: "Solicitudes",
-      icon: <ClipboardIcon />,
-      subItems: [
-        {
-          name: "Título",
-          link: "/",
-        },
-        {
-          name: "Solicitudes admisión",
-          link: "/",
-        },
-        {
-          name: "Solicitudes becas",
-          link: "/",
-        },
-      ],
-    },
-  ];
+  const navItems = getPages();
+
+  // const navItems = [
+  //   {
+  //     name: "Inicio",
+  //     icon: <HomeIcon />,
+  //     link: "/",
+  //   },
+  //   {
+  //     name: "Inscripciones",
+  //     icon: <PencilIcon />,
+  //     link: "/",
+  //     subItems: [
+  //       {
+  //         name: "Inscripción a cursar",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Inscripción a examen regular",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Pre-Inscripción a examen libre",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Generar boleta examen libre",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Inscripción a examen libre",
+  //         link: "/",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     name: "Consultas",
+  //     icon: <SearchIcon />,
+  //     link: "/",
+  //     subItems: [
+  //       {
+  //         name: "Ficha académica",
+  //         link: "/ficha-academica",
+  //       },
+  //       {
+  //         name: "Estado contable",
+  //         link: "/estado-contable",
+  //       },
+  //       {
+  //         name: "Datos personales",
+  //         link: "/datos-personales",
+  //       },
+  //       {
+  //         name: "Inscriptos por examen",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Calendario académico",
+  //         link: "/calendario-academico",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     name: "Transacciones",
+  //     icon: <RefreshIcon />,
+  //     subItems: [
+  //       {
+  //         name: "Historial",
+  //         link: "/historial-transacciones",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     name: "Actualizar datos",
+  //     icon: <EditIcon />,
+  //     subItems: [
+  //       {
+  //         name: "Cambiar correo",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Cambia clave",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Cambiar celular",
+  //         link: "/",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     name: "Certificaciones",
+  //     icon: <BookIcon />,
+  //     subItems: [
+  //       {
+  //         name: "Certificado de alumno regular",
+  //         link: "/certificado-alumno-regular",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     name: "Solicitudes",
+  //     icon: <ClipboardIcon />,
+  //     subItems: [
+  //       {
+  //         name: "Título",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Solicitudes admisión",
+  //         link: "/",
+  //       },
+  //       {
+  //         name: "Solicitudes becas",
+  //         link: "/",
+  //       },
+  //     ],
+  //   },
+  // ];
   return (
     <>
       <nav className="flex md:hidden bg-slate-900 text-white sticky items-center justify-between h-[71px] top-0 right-0 left-0 px-6">
