@@ -24,3 +24,9 @@ export type Materia = {
   fechaCondicion?: string;
   fechaVencimiento?: string;
 };
+
+export type Transaccion = {
+  id: string;
+  tipo: "inscripcion a examen" | "inscripcion a cursar";
+  fecha: string;
+};

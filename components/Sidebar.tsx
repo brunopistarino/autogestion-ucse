@@ -108,7 +108,7 @@ export default function Sidebar() {
       subItems: [
         {
           name: "Historial",
-          link: "/",
+          link: "/historial-transacciones",
         },
       ],
     },

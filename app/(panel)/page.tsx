@@ -36,7 +36,7 @@ export default function Page() {
     {
       name: "Historial Transacciones",
       icon: <RefreshIcon />,
-      link: "",
+      link: "/historial-transacciones",
     },
     {
       name: "Cert. Alum. Reg",
