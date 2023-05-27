@@ -16,9 +16,8 @@ import UserIcon from "@icons/user-01.svg";
 import ChevronDown from "@icons/chevron-down.svg";
 import ChevronUp from "@icons/chevron-up.svg";
 import MenuIcon from "@icons/menu-01.svg";
+import CloseIcon from "@icons/x-close.svg";
 
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -31,7 +30,16 @@ import {
 } from "@/components/ui/dialog";
 
 export default function Sidebar() {
+  const [isOpen, setIsOpen] = useState<Boolean>(false);
   const [open, setOpen] = useState<String>("");
+
+  const handleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   const handleOpen = (name: String) => {
     if (open === name) {
@@ -41,7 +49,31 @@ export default function Sidebar() {
     }
   };
 
-  console.log(open);
+  // if (typeof window !== "undefined") {
+  //   window.addEventListener("scroll", () => {
+  //     const navbar = document.getElementById("navbar");
+  //     if (navbar && current != "") {
+  //       navbar.classList.remove("transparent");
+  //       return;
+  //     }
+  //     if (navbar) {
+  //       if (window.scrollY > window.innerHeight / 2) {
+  //         navbar.classList.remove("transparent");
+  //       } else {
+  //         navbar.classList.add("transparent");
+  //       }
+  //     }
+  //   });
+  // }
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", () => {
+      if (!isOpen && window.innerWidth > 768) {
+        setIsOpen(false);
+      }
+    });
+  }
+
   const navItems = [
     {
       name: "Inicio",
@@ -136,7 +168,7 @@ export default function Sidebar() {
       subItems: [
         {
           name: "Certificado de alumno regular",
-          link: "/",
+          link: "/certificado-alumno-regular",
         },
       ],
     },
@@ -166,12 +198,19 @@ export default function Sidebar() {
           <LogoIcon className="h-9 w-7" />
           <p className="text-2xl font-bold">Autogestión</p>
         </div>
-        <MenuIcon />
+        {isOpen ? (
+          <CloseIcon onClick={handleIsOpen} />
+        ) : (
+          <MenuIcon onClick={handleIsOpen} />
+        )}
       </nav>
-      <nav className="bg-slate-900 w-80 shrink-0 text-white flex-col justify-between hidden md:flex overflow-y-auto">
-        <div className="flex flex-col gap-6 pt-8">
-          <div className="flex items-center gap-4 pr-5 pl-6">
-            {/* <img src="logo.png" className="max-h-12" alt="" /> */}
+      <nav
+        className={`${
+          isOpen ? "flex fixed top-[71px] bottom-0 w-full" : "hidden"
+        } bg-slate-900 w-80 z-50 shrink-0 text-white flex-col justify-between md:flex overflow-y-auto`}
+      >
+        <div className="flex flex-col gap-6 pt-2 md:pt-8">
+          <div className="hidden md:flex items-center gap-4 pr-5 pl-6">
             <LogoIcon className="h-12 w-9" />
             <p className="text-2xl font-bold">Autogestión</p>
           </div>
@@ -199,6 +238,7 @@ export default function Sidebar() {
                 ) : (
                   <Link
                     href={item.link}
+                    onClick={handleClose}
                     className="flex gap-3 pt-2 pr-3 pb-2 pl-3 hover:bg-slate-800 rounded-md"
                   >
                     {item.icon}
@@ -211,6 +251,7 @@ export default function Sidebar() {
                       <Link
                         key={y}
                         href={subItem.link}
+                        onClick={handleClose}
                         className="pt-2 pr-3 pb-2 pl-11 hover:bg-slate-800 rounded-md"
                       >
                         <p>{subItem.name}</p>

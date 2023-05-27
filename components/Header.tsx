@@ -1,7 +1,3 @@
-export default function Header() {
-  return (
-    <header className="px-8">
-      <p className="text-3xl font-semibold">Historial de Transacciones</p>
-    </header>
-  );
+export default function Header({ children }: { children: React.ReactNode }) {
+  return <header className="md:px-8 flex flex-col gap-4">{children}</header>;
 }

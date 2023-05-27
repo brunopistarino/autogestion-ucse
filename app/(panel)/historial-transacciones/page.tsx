@@ -4,6 +4,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { Transaccion } from "@/lib/types";
 
 import HeaderTitle from "@components/HeaderTitle";
+import Header from "@components/Header";
 
 export default async function Page() {
   const data: Transaccion[] = [
@@ -25,9 +26,15 @@ export default async function Page() {
   ];
   return (
     <>
-      <header className="px-8">
+      <Header>
         <HeaderTitle>Historial de Transacciones</HeaderTitle>
-      </header>
+        <div>
+          <p>Listado de transacciones efectuadas en los últimos 6 meses</p>
+          <p>
+            Total de transacciones: <strong>{data.length}</strong>
+          </p>
+        </div>
+      </Header>
       <div className="container px-0 md:px-8 mx-auto">
         <DataTable columns={columns} data={data} />
       </div>

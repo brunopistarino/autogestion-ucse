@@ -1,14 +1,17 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+import HeaderTitle from "@components/HeaderTitle";
+import Header from "@components/Header";
+
 export default async function Page() {
   return (
     <>
-      <header className="px-8">
-        <p className="text-3xl font-semibold">Datos Personales</p>
-      </header>
-      <section className="px-8">
-        <div className="flex gap-4">
+      <Header>
+        <HeaderTitle>Datos Personales</HeaderTitle>
+      </Header>
+      <section className="px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row gap-4">
           <div className="max-w-xs w-full">
             <p className="font-semibold">Personal</p>
             <p className="text-gray-500 font-light">
@@ -50,8 +53,8 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="px-8">
-        <div className="flex gap-4">
+      <section className="px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row gap-4">
           <div className="max-w-xs w-full">
             <p className="font-semibold">Dirección</p>
             <p className="text-gray-500 font-light">
@@ -91,8 +94,8 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="px-8">
-        <div className="flex gap-4">
+      <section className="px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row gap-4">
           <div className="max-w-xs w-full">
             <p className="font-semibold">Contacto</p>
             <p className="text-gray-500 font-light">

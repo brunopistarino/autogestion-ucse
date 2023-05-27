@@ -29,6 +29,10 @@ export default async function Page() {
           <div className="flex flex-col w-full p-6 rounded-md border gap-2 bg-white">
             <p>Aprobadas</p>
             <p className="text-4xl font-semibold">{cantidadMaterias}</p>
+            {/* <p>
+              <span className="text-4xl font-semibold">{cantidadMaterias}</span>
+              /48
+            </p> */}
           </div>
           <div className="flex flex-col w-full p-6 rounded-md border gap-2 bg-white">
             <p>Materias restantes</p>

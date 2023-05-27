@@ -1,18 +1,20 @@
 "use client";
 
-import { useState } from "react";
-
 import { BigCalendar } from "@/components/ui/big-calendar";
 
-export default async function Page() {
-  //   const [date, setDate] = useState<Date | undefined>(new Date());
+import Header from "@components/Header";
+import HeaderTitle from "@components/HeaderTitle";
+import HeaderDescription from "@components/HeaderDescription";
 
+export default async function Page() {
   return (
     <>
-      <header className="flex flex-col gap-4 px-8">
-        <p className="text-3xl font-semibold">Calendario Académico</p>
-        <BigCalendar mode="single" className="rounded-md border" />
-      </header>
+      <Header>
+        <HeaderTitle>Calendario Académico</HeaderTitle>
+        <HeaderDescription>
+          <BigCalendar mode="single" className="rounded-md border" />
+        </HeaderDescription>
+      </Header>
       <section className="px-8">
         <div className="flex p-6 rounded-md border gap-2 bg-white">
           <div className="flex flex-col w-full">

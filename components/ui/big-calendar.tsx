@@ -4,6 +4,7 @@ import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayModifiers, DayPicker } from "react-day-picker";
 
+import { es } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -48,7 +49,8 @@ const styles = `
 .MyCalendar .DayPicker-Day {
   display: inline-block;
   width: calc(100% / 7);
-}`;
+}
+`;
 
 function BigCalendar({
   className,
@@ -168,6 +170,7 @@ function BigCalendar({
     <>
       <style>{styles}</style>
       <DayPicker
+        locale={es}
         modifiers={modifiers}
         modifiersStyles={modifiersStyles}
         showOutsideDays={showOutsideDays}

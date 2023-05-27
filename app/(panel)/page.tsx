@@ -41,7 +41,7 @@ export default function Page() {
     {
       name: "Cert. Alum. Reg",
       icon: <PrinterIcon />,
-      link: "",
+      link: "/certificado-alumno-regular",
     },
   ];
 
