@@ -1,12 +1,17 @@
+import Link from "next/link";
+
 import { Materia } from "@/lib/types";
 import { columns } from "./columns";
 import { DataTable } from "./data-table";
 
 import { getMaterias } from "@/lib/utils";
 
+import ClipboardIcon from "@icons/clipboard.svg";
+
 import Header from "@components/Header";
 import HeaderTitle from "@components/HeaderTitle";
 import HeaderDescription from "@components/HeaderTitle";
+import CTooltip from "@components/Tooltip";
 
 export default async function Page() {
   const materias = await getMaterias();
@@ -38,9 +43,18 @@ export default async function Page() {
               /48
             </p> */}
           </div>
-          <div className="flex flex-col w-full p-6 rounded-md border gap-2 bg-white">
+          <div className="flex flex-col relative w-full p-6 rounded-md border gap-2 bg-white">
             <p>Materias restantes</p>
             <p className="text-4xl font-semibold">{48 - cantidadMaterias}</p>
+            <Link
+              className="absolute top-4 right-4 p-1 pb-0 text-gray-500 hover:bg-gray-200 rounded-md transition-colors duration-2"
+              href="/RPTCorrelatividadesInforme_2022.pdf"
+              target="_blank"
+            >
+              <CTooltip text="Correlativas">
+                <ClipboardIcon />
+              </CTooltip>
+            </Link>
           </div>
         </div>
       </Header>
