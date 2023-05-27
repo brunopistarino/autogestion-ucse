@@ -14,6 +14,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import Container from "@components/Container";
+
 export default function Page() {
   const accesos = [
     {
@@ -45,13 +47,13 @@ export default function Page() {
 
   return (
     <>
-      <header className="px-8 flex flex-col gap-4">
-        <p className="text-3xl font-semibold">Accesos Directos</p>
-        <div className="flex gap-4">
+      <header className="md:px-8 flex flex-col gap-4">
+        <p className="px-4 md:px-0 text-3xl font-semibold">Accesos Directos</p>
+        <div className="px-4 md:px-0 flex gap-4 overflow-x-auto">
           {accesos.map((acceso, i) => (
             <Link
               key={i}
-              className="flex flex-col w-full py-6 px-4 rounded-md border gap-2 bg-white items-center"
+              className="flex flex-col w-full min-w-[150px] py-6 px-4 rounded-md border gap-2 bg-white items-center"
               href={acceso.link}
             >
               {acceso.icon}
@@ -60,7 +62,7 @@ export default function Page() {
           ))}
         </div>
       </header>
-      <section className="px-8 flex gap-4">
+      <section className="px-4 md:px-8 flex gap-4">
         <Link
           href="https://www.bidi.la"
           target="_blank"
@@ -76,62 +78,56 @@ export default function Page() {
           <img src="Errepar.png" alt="" />
         </Link>
       </section>
-      <section className="px-8">
-        <div className="flex flex-col p-6 rounded-md border gap-2 bg-white">
-          <p className="text-xl font-semibold">Correo Institucional</p>
-          <p>brunopistarino@alumnos.ucse.edu.ar</p>
-          <CredentialsDialog>
-            clic [aquí para datos de acceso y clave provisoria]
-          </CredentialsDialog>
-        </div>
-      </section>
-      <section className="px-8">
-        <div className="flex flex-col p-6 rounded-md border gap-2 bg-white">
-          <p className="text-xl font-semibold">Necesitas ahorrar tiempo?</p>
-          <p>
-            Inscribite desde la comodidad de tu hogar. Evita largas colas de
-            espera y ahorra tiempo! Recuerda que con cada inscripción que
-            realices se genera un comprobante de transacción que tiene igual
-            validez que el ticket emitido en nuestras terminales. Te inscribes,
-            copias el número de transacción y listo!
-          </p>
-          <p>
-            Si tenés regular tu situación contable, podés{" "}
-            <Link href="estado-contable" className="text-blue-700">
-              imprimir desde aquí
-            </Link>{" "}
-            tu cupón de pago.
-          </p>
-        </div>
-      </section>
-      <section className="px-8">
-        <div className="flex flex-col p-6 rounded-md border gap-2 bg-white">
-          <p className="text-xl font-semibold">Recuerda</p>
-          <p>
-            <span className="underline font-medium">
-              Mantén actualizado tus datos personales.
-            </span>{" "}
-            En caso de encontrar inconsistencias comunícate con el Departamento
-            Alumno de tu sede y bríndales la información que necesita ser
-            actualizada.
-          </p>
-          <p>
-            <span className="underline font-medium">
-              No olvides registrar tu e-mail activo.
-            </span>{" "}
-            Si cambiaste tu dirección de correo electrónico necesitas
-            registrarlo en nuestro sistema para tener acceso a los servicios que
-            te podemos brindar.
-          </p>
-          <p>
-            <span className="underline font-medium">
-              Las inscripciones tienen restricciones.
-            </span>{" "}
-            Solo podés efectuarlas en días establecidos por el calendario
-            académico.
-          </p>
-        </div>
-      </section>
+      <Container>
+        <p className="text-xl font-semibold">Correo Institucional</p>
+        <p>brunopistarino@alumnos.ucse.edu.ar</p>
+        <CredentialsDialog>
+          clic [aquí para datos de acceso y clave provisoria]
+        </CredentialsDialog>
+      </Container>
+      <Container>
+        <p className="text-xl font-semibold">Necesitas ahorrar tiempo?</p>
+        <p>
+          Inscribite desde la comodidad de tu hogar. Evita largas colas de
+          espera y ahorra tiempo! Recuerda que con cada inscripción que realices
+          se genera un comprobante de transacción que tiene igual validez que el
+          ticket emitido en nuestras terminales. Te inscribes, copias el número
+          de transacción y listo!
+        </p>
+        <p>
+          Si tenés regular tu situación contable, podés{" "}
+          <Link href="estado-contable" className="text-blue-700">
+            imprimir desde aquí
+          </Link>{" "}
+          tu cupón de pago.
+        </p>
+      </Container>
+      <Container>
+        <p className="text-xl font-semibold">Recuerda</p>
+        <p>
+          <span className="underline font-medium">
+            Mantén actualizado tus datos personales.
+          </span>{" "}
+          En caso de encontrar inconsistencias comunícate con el Departamento
+          Alumno de tu sede y bríndales la información que necesita ser
+          actualizada.
+        </p>
+        <p>
+          <span className="underline font-medium">
+            No olvides registrar tu e-mail activo.
+          </span>{" "}
+          Si cambiaste tu dirección de correo electrónico necesitas registrarlo
+          en nuestro sistema para tener acceso a los servicios que te podemos
+          brindar.
+        </p>
+        <p>
+          <span className="underline font-medium">
+            Las inscripciones tienen restricciones.
+          </span>{" "}
+          Solo podés efectuarlas en días establecidos por el calendario
+          académico.
+        </p>
+      </Container>
     </>
   );
 }

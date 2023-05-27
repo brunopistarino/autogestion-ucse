@@ -65,7 +65,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="rounded-md border bg-white">
+    <div className="md:rounded-md border bg-white">
       <div className="flex p-5 rounded-md items-end gap-3">
         <div className="flex flex-col gap-2 max-w-xs w-full">
           <Label htmlFor="name">Filtrar por nombre</Label>

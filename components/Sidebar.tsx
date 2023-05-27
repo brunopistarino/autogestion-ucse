@@ -15,6 +15,7 @@ import EditIcon from "@icons/edit-05.svg";
 import UserIcon from "@icons/user-01.svg";
 import ChevronDown from "@icons/chevron-down.svg";
 import ChevronUp from "@icons/chevron-up.svg";
+import MenuIcon from "@icons/menu-01.svg";
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -159,74 +160,83 @@ export default function Sidebar() {
     },
   ];
   return (
-    <nav className="bg-slate-900 w-80 shrink-0 text-white flex-col justify-between hidden md:flex overflow-y-auto">
-      <div className="flex flex-col gap-6 pt-8">
-        <div className="flex items-center gap-4 pr-5 pl-6">
-          {/* <img src="logo.png" className="max-h-12" alt="" /> */}
-          <LogoIcon className="h-12 w-9" />
+    <>
+      <nav className="flex md:hidden bg-slate-900 text-white sticky items-center justify-between h-[71px] top-0 right-0 left-0 px-6">
+        <div className="flex items-center gap-4">
+          <LogoIcon className="h-9 w-7" />
           <p className="text-2xl font-bold">Autogestión</p>
         </div>
-        <div className="px-6">
-          <input
-            type="text"
-            className="w-full border rounded-lg p-2 bg-slate-800 border-slate-600 "
-            placeholder="Buscar"
-          />
-        </div>
-        <div className="flex flex-col gap-1 px-4 ">
-          {navItems.map((item, x) => (
-            <div key={x} className="flex flex-col gap-2">
-              {item.subItems ? (
-                <div
-                  className="flex gap-3 pt-2 pr-3 pb-2 pl-3 hover:bg-slate-800 rounded-md"
-                  onClick={() => item.subItems && handleOpen(item.name)}
-                >
-                  {item.icon}
-                  <p className="font-semibold">{item.name}</p>
-                  <div className="ml-auto">
-                    {open === item.name ? <ChevronUp /> : <ChevronDown />}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  href={item.link}
-                  className="flex gap-3 pt-2 pr-3 pb-2 pl-3 hover:bg-slate-800 rounded-md"
-                >
-                  {item.icon}
-                  <p className="font-semibold">{item.name}</p>
-                </Link>
-              )}
-              {item.subItems && open === item.name && (
-                <div className="flex flex-col gap-1 pb-1">
-                  {item.subItems.map((subItem, y) => (
-                    <Link
-                      key={y}
-                      href={subItem.link}
-                      className="pt-2 pr-3 pb-2 pl-11 hover:bg-slate-800 rounded-md"
-                    >
-                      <p>{subItem.name}</p>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="px-2 pb-6">
-        <UserDialog>
-          <div className="flex gap-3 items-center hover:bg-slate-800 rounded-md p-2 cursor-pointer">
-            <div className="bg-slate-700 w-10 h-10 rounded-full flex place-content-center items-center">
-              <UserIcon />
-            </div>
-            <div className="flex flex-col">
-              <p>Bruno Pistarino</p>
-              <p className="text-sm">brunopistarino@gmail.com</p>
-            </div>
+        <MenuIcon />
+      </nav>
+      <nav className="bg-slate-900 w-80 shrink-0 text-white flex-col justify-between hidden md:flex overflow-y-auto">
+        <div className="flex flex-col gap-6 pt-8">
+          <div className="flex items-center gap-4 pr-5 pl-6">
+            {/* <img src="logo.png" className="max-h-12" alt="" /> */}
+            <LogoIcon className="h-12 w-9" />
+            <p className="text-2xl font-bold">Autogestión</p>
           </div>
-        </UserDialog>
-      </div>
-    </nav>
+          <div className="px-6">
+            <input
+              type="text"
+              className="w-full border rounded-lg p-2 bg-slate-800 border-slate-600 "
+              placeholder="Buscar"
+            />
+          </div>
+          <div className="flex flex-col gap-1 px-4 ">
+            {navItems.map((item, x) => (
+              <div key={x} className="flex flex-col gap-2">
+                {item.subItems ? (
+                  <div
+                    className="flex gap-3 pt-2 pr-3 pb-2 pl-3 hover:bg-slate-800 rounded-md"
+                    onClick={() => item.subItems && handleOpen(item.name)}
+                  >
+                    {item.icon}
+                    <p className="font-semibold">{item.name}</p>
+                    <div className="ml-auto">
+                      {open === item.name ? <ChevronUp /> : <ChevronDown />}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.link}
+                    className="flex gap-3 pt-2 pr-3 pb-2 pl-3 hover:bg-slate-800 rounded-md"
+                  >
+                    {item.icon}
+                    <p className="font-semibold">{item.name}</p>
+                  </Link>
+                )}
+                {item.subItems && open === item.name && (
+                  <div className="flex flex-col gap-1 pb-1">
+                    {item.subItems.map((subItem, y) => (
+                      <Link
+                        key={y}
+                        href={subItem.link}
+                        className="pt-2 pr-3 pb-2 pl-11 hover:bg-slate-800 rounded-md"
+                      >
+                        <p>{subItem.name}</p>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="px-2 py-6">
+          <UserDialog>
+            <div className="flex gap-3 items-center hover:bg-slate-800 rounded-md p-2 cursor-pointer">
+              <div className="bg-slate-700 w-10 h-10 rounded-full flex place-content-center items-center">
+                <UserIcon />
+              </div>
+              <div className="flex flex-col">
+                <p>Bruno Pistarino</p>
+                <p className="text-sm">brunopistarino@gmail.com</p>
+              </div>
+            </div>
+          </UserDialog>
+        </div>
+      </nav>
+    </>
   );
 }
 

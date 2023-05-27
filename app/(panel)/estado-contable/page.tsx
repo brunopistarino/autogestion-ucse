@@ -15,18 +15,22 @@ export default async function Page() {
 
   return (
     <>
-      <header className="px-8 flex flex-col gap-6">
+      <header className="px-0 md:px-8 flex flex-col gap-6">
         <div>
-          <p className="text-3xl font-semibold">Estado Contable</p>
+          <p className="px-4 md:px-0 text-3xl font-semibold">Estado Contable</p>
         </div>
-        <div className="flex gap-4 border-b">
-          <button className="text-blue-700 font-bold border-b-2 border-blue-700 px-1 pb-2.5">
+        <div className="px-4 md:px-0 flex gap-4 border-b overflow-x-auto">
+          <button className="text-blue-700 font-bold border-b-2 border-blue-700 px-1 pb-2.5 whitespace-nowrap">
             Aranceles
           </button>
-          <button className="px-1 pb-3">Planes de Pago</button>
-          <button className="px-1 pb-3">Examen Libre</button>
-          <button className="px-1 pb-3">Detalle Completo</button>
-          <button className="px-1 pb-3">Recibos</button>
+          <button className="px-1 pb-3 whitespace-nowrap">
+            Planes de Pago
+          </button>
+          <button className="px-1 pb-3 whitespace-nowrap">Examen Libre</button>
+          <button className="px-1 pb-3 whitespace-nowrap">
+            Detalle Completo
+          </button>
+          <button className="px-1 pb-3 whitespace-nowrap">Recibos</button>
         </div>
       </header>
       <div className="container px-0 md:px-8 mx-auto">
