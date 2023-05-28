@@ -86,7 +86,7 @@ export function getPages() {
           link: "/",
         },
         {
-          name: "Cambia clave",
+          name: "Cambiar clave",
           link: "/",
         },
         {

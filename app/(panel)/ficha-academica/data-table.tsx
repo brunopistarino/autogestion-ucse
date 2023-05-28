@@ -50,7 +50,9 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+    id: false,
+  });
   const table = useReactTable({
     data,
     columns,
@@ -63,6 +65,8 @@ export function DataTable<TData, TValue>({
       columnVisibility,
     },
   });
+
+  console.log(columnVisibility);
 
   return (
     <div className="md:rounded-md border bg-white">
@@ -100,8 +104,8 @@ export function DataTable<TData, TValue>({
               <SelectItem value="inscripto regular">
                 Inscripto regular
               </SelectItem>
-              <SelectItem value="baja">Baja</SelectItem>
               <SelectItem value="no regular">No regular</SelectItem>
+              <SelectItem value="baja">Baja</SelectItem>
             </SelectContent>
           </Select>
         </div>

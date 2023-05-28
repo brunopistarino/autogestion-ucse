@@ -6,6 +6,10 @@ import { Materia } from "@/lib/types";
 
 export const columns: ColumnDef<Materia>[] = [
   {
+    accessorKey: "id",
+    header: "Código",
+  },
+  {
     accessorKey: "nombre",
     header: "Materia",
   },
@@ -33,7 +37,7 @@ export const columns: ColumnDef<Materia>[] = [
 
       return (
         <span
-          className={`inline-block px-2 py-1 rounded-full text-xs font-semibold capitalize ${
+          className={`inline-block px-2 py-1 rounded-full text-xs font-semibold capitalize text-center ${
             condicion === "promocionado"
               ? "bg-yellow-200 text-yellow-800 border border-yellow-500"
               : condicion === "aprobado"
