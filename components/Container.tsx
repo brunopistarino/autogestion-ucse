@@ -7,7 +7,6 @@ export default function Container({
   children: React.ReactNode;
   className?: string;
 }) {
-  console.log(className);
   return (
     <section className="px-4 md:px-8">
       <div

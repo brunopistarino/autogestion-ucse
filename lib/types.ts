@@ -30,3 +30,11 @@ export type Transaccion = {
   tipo: "inscripcion a examen" | "inscripcion a cursar";
   fecha: string;
 };
+
+export type Examen = {
+  id: string;
+  materia: string;
+  fecha: string;
+  catedra: string;
+  inscriptos: number;
+};

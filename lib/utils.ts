@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-import { Payment, Materia } from "@/lib/types";
+import { Payment, Materia, Examen } from "@/lib/types";
 
 export function getPayments(): Payment[] {
   return [
@@ -174,6 +174,172 @@ export function getMaterias(): Materia[] {
       fechaInscripcion: "31/03/2023",
       fechaCondicion: "31/03/2023",
       fechaVencimiento: "31/01/2024",
+    },
+  ];
+}
+
+export function getExamenes(): Examen[] {
+  return [
+    {
+      id: "460010",
+      materia: "Álgebra",
+      fecha: "09/05/2023",
+      catedra: "A",
+      inscriptos: 1,
+    },
+    {
+      id: "460011",
+      materia: "Algebra Lineal",
+      fecha: "09/05/2023",
+      catedra: "A",
+      inscriptos: 3,
+    },
+    {
+      id: "460012",
+      materia: "Algoritmos y Programación",
+      fecha: "10/05/2023",
+      catedra: "A",
+      inscriptos: 2,
+    },
+    {
+      id: "460013",
+      materia: "Arquitectura de Computadoras",
+      fecha: "08/05/2023",
+      catedra: "A",
+      inscriptos: 4,
+    },
+    {
+      id: "460027",
+      materia: "Base de Datos I",
+      fecha: "10/05/2023",
+      catedra: "A",
+      inscriptos: 1,
+    },
+    {
+      id: "460014",
+      materia: "Calculo I",
+      fecha: "09/05/2023",
+      catedra: "A",
+      inscriptos: 0,
+    },
+    {
+      id: "460015",
+      materia: "Calculo II",
+      fecha: "09/05/2023",
+      catedra: "A",
+      inscriptos: 2,
+    },
+    {
+      id: "460016",
+      materia: "Comunicación Oral y Escrita",
+      fecha: "10/05/2023",
+      catedra: "A",
+      inscriptos: 0,
+    },
+    {
+      id: "460017",
+      materia: "Estructuras de Datos",
+      fecha: "08/05/2023",
+      catedra: "A",
+      inscriptos: 0,
+    },
+    {
+      id: "460018",
+      materia: "Filosofía",
+      fecha: "09/05/2023",
+      catedra: "A",
+      inscriptos: 4,
+    },
+    {
+      id: "460019",
+      materia: "Física I",
+      fecha: "11/05/2023",
+      catedra: "A",
+      inscriptos: 0,
+    },
+    {
+      id: "460020",
+      materia: "Física II",
+      fecha: "11/05/2023",
+      catedra: "A",
+      inscriptos: 3,
+    },
+    {
+      id: "460021",
+      materia: "Inglés",
+      fecha: "08/05/2023",
+      catedra: "A",
+      inscriptos: 2,
+    },
+    {
+      id: "460022",
+      materia: "Matemática Discreta",
+      fecha: "09/05/2023",
+      catedra: "A",
+      inscriptos: 0,
+    },
+    {
+      id: "460023",
+      materia: "Organización Empresarial",
+      fecha: "11/05/2023",
+      catedra: "A",
+      inscriptos: 7,
+    },
+    {
+      id: "460024",
+      materia: "Programación I",
+      fecha: "10/05/2023",
+      catedra: "A",
+      inscriptos: 2,
+    },
+    {
+      id: "460287",
+      materia: "Programacion II",
+      fecha: "10/05/2023",
+      catedra: "A",
+      inscriptos: 1,
+    },
+    {
+      id: "460025",
+      materia: "Sistemas de Informacion I",
+      fecha: "08/05/2023",
+      catedra: "A",
+      inscriptos: 1,
+    },
+    {
+      id: "460026",
+      materia: "Sistemas Operativos I",
+      fecha: "11/05/2023",
+      catedra: "A",
+      inscriptos: 4,
+    },
+    {
+      id: "460028",
+      materia: "Teología",
+      fecha: "12/05/2023",
+      catedra: "B",
+      inscriptos: 2,
+    },
+    {
+      id: "460029",
+      materia: "Teología",
+      fecha: "12/05/2023",
+      catedra: "C",
+      inscriptos: 2,
+    },
+    {
+      id: "460030",
+      materia: "Teología",
+      fecha: "12/05/2023",
+      catedra: "S",
+      inscriptos: 0,
+    },
+    {
+      id: "460031",
+      materia: "Teología",
+      fecha: "12/05/2023",
+      catedra: "A",
+      inscriptos: 2,
     },
   ];
 }

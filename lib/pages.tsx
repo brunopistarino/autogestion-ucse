@@ -11,7 +11,7 @@ export function getPages() {
     {
       name: "Inicio",
       icon: <HomeIcon />,
-      link: "/",
+      link: "/inicio",
     },
     {
       name: "Inscripciones",
@@ -59,7 +59,7 @@ export function getPages() {
         },
         {
           name: "Inscriptos por examen",
-          link: "/",
+          link: "/inscriptos-examen",
         },
         {
           name: "Calendario académico",
@@ -83,15 +83,15 @@ export function getPages() {
       subItems: [
         {
           name: "Cambiar correo",
-          link: "/",
+          link: "/modificar-correo",
         },
         {
           name: "Cambiar clave",
-          link: "/",
+          link: "/modificar-clave",
         },
         {
           name: "Cambiar celular",
-          link: "/",
+          link: "/modificar-celular",
         },
       ],
     },
@@ -111,15 +111,15 @@ export function getPages() {
       subItems: [
         {
           name: "Título",
-          link: "/",
+          link: "/solicitud-titulo",
         },
         {
           name: "Solicitudes admisión",
-          link: "/",
+          link: "/inicio",
         },
         {
           name: "Solicitudes becas",
-          link: "/",
+          link: "/inicio",
         },
       ],
     },

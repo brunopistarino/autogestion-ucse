@@ -158,7 +158,7 @@ const UserDialog = ({ children }: { children: React.ReactNode }) => (
       </div>
       <DialogFooter>
         <Button className="w-full">Cambiar de Carrera</Button>
-        <Link href="login" className="w-full">
+        <Link href="/" className="w-full">
           <Button className="w-full" variant="destructive">
             Cerrar Sesión
           </Button>

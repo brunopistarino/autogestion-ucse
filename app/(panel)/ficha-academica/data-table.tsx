@@ -66,8 +66,6 @@ export function DataTable<TData, TValue>({
     },
   });
 
-  console.log(columnVisibility);
-
   return (
     <div className="md:rounded-md border bg-white">
       <div className="flex p-5 rounded-md items-end gap-3">

@@ -30,21 +30,20 @@ export default function Navigation() {
       }
     });
   }
-  console.log("basePath", basePath);
 
   return (
     <>
       <div className="flex md:hidden gap-2 mb-1 px-4">
         <Link
+          href="/inicio"
           className="flex gap-2 text-gray-600 hover:bg-gray-200 rounded pl-1 pr-2"
-          href="/"
         >
           <ArrowIcon className=" p-[1px] hover:bg-gray-100 rounded" />
           <p>Volver</p>
         </Link>
       </div>
       <div className="hidden md:flex gap-2 mb-1">
-        <Link href="/">
+        <Link href="/inicio">
           <HomeIcon className="text-gray-500 p-[1px] hover:bg-gray-100 rounded" />
         </Link>
         {basePath && (

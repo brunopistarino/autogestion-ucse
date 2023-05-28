@@ -4,11 +4,13 @@ import MailIcon from "@icons/mail-01.svg";
 import LogoIcon from "@icons/logob.svg";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default async function Page() {
   return (
-    <div className="grid grid-cols-2">
-      <div className="w-full flex flex-col justify-between p-8">
+    <div className="md:grid grid-cols-2 h-[100dvh]">
+      <div className="w-full flex flex-col justify-between p-4 md:p-8 min-h-full">
         <div className="flex gap-4">
           {/* <img src="logo.png" className="max-h-12" alt="" /> */}
           <LogoIcon className="w-9 h-14" />
@@ -25,27 +27,31 @@ export default async function Page() {
           </div>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-[6px]">
-              <label htmlFor="">Documento</label>
-              <input
+              <Label htmlFor="documento" className="mb-1">
+                Documento
+              </Label>
+              <Input
                 type="text"
-                className="border border-slate-300 px-[14px] py-[10px] rounded-md"
+                id="documento"
                 placeholder="Ingrese su documento"
               />
             </div>
             <div className="flex flex-col gap-[6px]">
-              <label htmlFor="">Contraseña</label>
-              <input
-                type="text"
-                className="border border-slate-300 px-[14px] py-[10px] rounded-md"
+              <Label htmlFor="password" className="mb-1">
+                Contraseña
+              </Label>
+              <Input
+                type="password"
+                id="password"
                 placeholder="Ingrese su contraseña"
               />
             </div>
-            <Link href="" className="w-full">
+            <Link href="/inicio" className="w-full">
               <Button className="w-full bg-blue-700">Ingresar</Button>
             </Link>
           </div>
           <div>
-            <p>
+            <p className="text-center md:text-left">
               Olvidaste tu contaseña?{" "}
               <span className="text-blue-700 hover:underline font-semibold">
                 Recuperala
@@ -61,7 +67,7 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      <div className="h-screen w-full py-4 pr-4 max-h-screen">
+      <div className="hidden md:block h-screen w-full py-4 pr-4 max-h-screen">
         <div className="h-full w-full rounded-2xl grid grid-rows-4 truncate">
           <div className="h-full bg-cover bg-center bg-[url('/rafaela.png')] grid place-content-center">
             <p className="text-2xl text-white font-semibold">Sede Rafaela</p>

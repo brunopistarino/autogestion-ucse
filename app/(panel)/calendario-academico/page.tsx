@@ -16,8 +16,8 @@ export default async function Page() {
         </HeaderDescription>
       </Header>
       <section className="px-8">
-        <div className="flex p-6 rounded-md border gap-2 bg-white">
-          <div className="flex flex-col w-full">
+        <div className="flex flex-col sm:flex-row p-6 rounded-md border gap-1 sm:gap-2 bg-white">
+          <div className="flex flex-col w-full gap-1">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-[#BCD242]" />
               <p>Exámenes</p>
@@ -35,7 +35,7 @@ export default async function Page() {
               <p>Receso</p>
             </div>
           </div>
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full gap-1">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-[#CF1A26]" />
               <p>Feridos</p>
