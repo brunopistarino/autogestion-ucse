@@ -15,7 +15,7 @@ export default async function Page() {
           <BigCalendar mode="single" className="rounded-md border" />
         </HeaderDescription>
       </Header>
-      <section className="px-8">
+      <section className="px-4 md:px-8">
         <div className="flex flex-col sm:flex-row p-6 rounded-md border gap-1 sm:gap-2 bg-white">
           <div className="flex flex-col w-full gap-1">
             <div className="flex items-center gap-2">
