@@ -1,5 +1,10 @@
 import Sidebar from "@components/Sidebar";
 
+// change theme color to red
+export const metadata = {
+  themeColor: "#0F172A",
+};
+
 export default function RootLayout({
   children,
 }: {
