@@ -16,34 +16,32 @@ export function getPages() {
     {
       name: "Inscripciones",
       icon: <PencilIcon />,
-      link: "/",
       subItems: [
         {
           name: "Inscripción a cursar",
-          link: "/",
+          // link: "/inicio",
         },
         {
           name: "Inscripción a examen regular",
-          link: "/",
+          // link: "/inicio",
         },
         {
           name: "Pre-Inscripción a examen libre",
-          link: "/",
+          // link: "/inicio",
         },
         {
           name: "Generar boleta examen libre",
-          link: "/",
+          // link: "/inicio",
         },
         {
           name: "Inscripción a examen libre",
-          link: "/",
+          // link: "/inicio",
         },
       ],
     },
     {
       name: "Consultas",
       icon: <SearchIcon />,
-      link: "/",
       subItems: [
         {
           name: "Ficha académica",
@@ -115,11 +113,11 @@ export function getPages() {
         },
         {
           name: "Solicitudes admisión",
-          link: "/inicio",
+          // link: "/inicio",
         },
         {
           name: "Solicitudes becas",
-          link: "/inicio",
+          // link: "/inicio",
         },
       ],
     },

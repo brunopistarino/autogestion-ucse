@@ -111,14 +111,22 @@ export default function Sidebar() {
                 {item.subItems && open === item.name && (
                   <div className="flex flex-col gap-1 pb-1">
                     {item.subItems.map((subItem, y) => (
-                      <Link
-                        key={y}
-                        href={subItem.link}
-                        onClick={handleClose}
-                        className="pt-2 pr-3 pb-2 pl-11 hover:bg-slate-800 rounded-md"
-                      >
-                        <p>{subItem.name}</p>
-                      </Link>
+                      <>
+                        {subItem.link ? (
+                          <Link
+                            key={y}
+                            href={subItem.link}
+                            onClick={handleClose}
+                            className="pt-2 pr-3 pb-2 pl-11 hover:bg-slate-800 rounded-md"
+                          >
+                            <p>{subItem.name}</p>
+                          </Link>
+                        ) : (
+                          <p className="pt-2 pr-3 pb-2 pl-11 text-gray-500 rounded-md cursor-default">
+                            {subItem.name}
+                          </p>
+                        )}
+                      </>
                     ))}
                   </div>
                 )}
