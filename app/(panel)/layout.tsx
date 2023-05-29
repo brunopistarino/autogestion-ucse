@@ -1,3 +1,5 @@
+import "./panel.css";
+
 import Sidebar from "@components/Sidebar";
 
 // change theme color to red
